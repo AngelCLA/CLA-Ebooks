@@ -30,6 +30,7 @@ jobs:
           toolchain: 1.97.1
           components: rustfmt, clippy
       - run: bun install --frozen-lockfile
+      - run: bun run build:sidecar
       - run: cargo fmt --manifest-path src-tauri/Cargo.toml -- --check
       - run: cargo clippy --manifest-path src-tauri/Cargo.toml -- -D warnings
       - run: cargo test --manifest-path src-tauri/Cargo.toml
