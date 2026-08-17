@@ -1,0 +1,7 @@
+{
+  "bundle": {
+    "resources": {
+      "binaries/ebook-generator-x86_64-pc-windows-msvc.exe": "ebook-generator.exe"
+    }
+  }
+}

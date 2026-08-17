@@ -30,7 +30,6 @@
     "resources": {
       "../resources/ebook-template": "ebook-template",
       "../resources/page-turn.mp3": "ebook-assets/page-turn.mp3",
-      "binaries/ebook-generator-x86_64-pc-windows-msvc.exe": "ebook-generator.exe",
       "../node_modules/@fontsource/ibm-plex-mono/files/ibm-plex-mono-latin-ext-400-normal.woff2": "ebook-fonts/ibm-plex-mono-latin-ext-400-normal.woff2",
       "../node_modules/@fontsource/ibm-plex-mono/files/ibm-plex-mono-latin-ext-600-normal.woff2": "ebook-fonts/ibm-plex-mono-latin-ext-600-normal.woff2",
       "../node_modules/@fontsource/ibm-plex-mono/files/ibm-plex-mono-latin-ext-700-normal.woff2": "ebook-fonts/ibm-plex-mono-latin-ext-700-normal.woff2"

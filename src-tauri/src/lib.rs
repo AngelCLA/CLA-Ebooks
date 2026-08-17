@@ -196,9 +196,12 @@ fn generator_resources(app: &AppHandle) -> Result<GeneratorResources, String> {
         format!("No se pudieron localizar los recursos de la aplicación: {error}")
     })?;
     let sidecar_names = [
+        "ebook-generator",
         "ebook-generator.exe",
         "ebook-generator-x86_64-pc-windows-msvc.exe",
         "ebook-generator-aarch64-pc-windows-msvc.exe",
+        "ebook-generator-x86_64-apple-darwin",
+        "ebook-generator-aarch64-apple-darwin",
     ];
     let mut sidecar_candidates = Vec::new();
     for directory in [

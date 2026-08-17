@@ -155,13 +155,13 @@ bun run tauri:build
 
 Para desarrollo del motor se requiere Python y las dependencias definidas en `src-tauri/sidecar/requirements-build.txt`. `bun run build:sidecar` crea y utiliza un entorno virtual local en `.venv`, instala las versiones fijadas y empaqueta el generador. Esa dependencia es exclusiva del entorno de desarrollo; no aplica a quienes instalan la aplicación final.
 
-Las comprobaciones se ejecutan automaticamente en cada push y pull request mediante GitHub Actions.
+Las comprobaciones se ejecutan automaticamente en cada push y pull request mediante GitHub Actions. El workflow manual **Build macOS** genera artefactos `.dmg` para Intel y Apple Silicon. Los artefactos de prueba no estan firmados ni notarizados por Apple.
 
 ## Tecnología
 
 - [React](https://react.dev/) y TypeScript para la interfaz.
 - [Vite](https://vite.dev/) para desarrollo y build del frontend.
-- [Tauri](https://tauri.app/) para la aplicación de escritorio y empaquetado Windows.
+- [Tauri](https://tauri.app/) para la aplicación de escritorio y empaquetado Windows y macOS.
 - PyMuPDF y Pillow, incluidos en el sidecar de conversión, para analizar y renderizar PDFs.
 - HTML, CSS y JavaScript estáticos para el lector entregado.
 

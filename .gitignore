@@ -13,6 +13,7 @@ src-tauri/gen/
 /build/
 /ebook-generator.spec
 src-tauri/binaries/*.exe
+src-tauri/binaries/ebook-generator
 .venv/
 __pycache__/
 *.pyc
