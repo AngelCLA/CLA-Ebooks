@@ -1,0 +1,2 @@
+-r src-tauri/sidecar/requirements-build.txt
+ruff==0.15.4

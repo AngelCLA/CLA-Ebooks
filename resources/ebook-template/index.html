@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#27312d">
+  <title>__BOOK_TITLE__</title>
+  <link rel="stylesheet" href="assets/reader.css">
+</head>
+<body>
+  <div id="app" class="app" aria-label="Lector de ebook" tabindex="0">
+    <header class="ebook-header" aria-label="Título del ebook">
+      <h1 id="book-title">__BOOK_TITLE__</h1>
+    </header>
+
+    <main id="stage" class="stage">
+      <div id="book-shell" class="book-shell">
+        <div class="book-shadow" aria-hidden="true"></div>
+        <div id="book" class="book">
+          <div id="left-page" class="page static-page left-page"><img alt=""></div>
+          <div id="right-page" class="page static-page right-page"><img alt=""></div>
+          <div id="flip-page" class="flip-page" aria-hidden="true">
+            <div class="flip-face flip-front"><img alt=""><div class="light front-light"></div></div>
+            <div class="flip-face flip-back"><img alt=""><div class="light back-light"></div></div>
+            <div class="curl-highlight"></div>
+          </div>
+          <div class="spine" aria-hidden="true"></div>
+        </div>
+      </div>
+
+      <button id="prev-zone" class="turn-zone prev-zone" aria-label="Página anterior"></button>
+      <button id="next-zone" class="turn-zone next-zone" aria-label="Página siguiente"></button>
+    </main>
+
+    <!-- Navegación inferior estilo visor institucional -->
+    <nav class="bottom-nav glass-panel" aria-label="Navegación del libro">
+      <button id="first-btn" class="nav-icon-btn" title="Primera página" aria-label="Primera página">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m13.5 6-6 6 6 6M18.5 6l-6 6 6 6"/></svg>
+      </button>
+      <button id="prev-btn" class="nav-icon-btn" title="Página anterior" aria-label="Página anterior">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 6-6 6 6 6"/></svg>
+      </button>
+
+      <div class="page-readout" aria-live="polite">
+        <strong id="page-label">Portada</strong>
+        <span id="counter">Página 1 de 1</span>
+        <input id="page-slider" class="visually-hidden" type="range" min="1" max="1" value="1" aria-label="Ir a página">
+      </div>
+
+      <button id="next-btn" class="nav-icon-btn" title="Página siguiente" aria-label="Página siguiente">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>
+      </button>
+      <button id="last-btn" class="nav-icon-btn" title="Última página" aria-label="Última página">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m10.5 6 6 6-6 6M5.5 6l6 6-6 6"/></svg>
+      </button>
+    </nav>
+
+    <!-- Controles compactos inferiores derechos -->
+    <aside class="view-tools" aria-label="Controles de vista">
+      <div class="zoom-stack glass-panel">
+        <button id="zoom-in" class="tool-btn" title="Acercar" aria-label="Acercar">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+        </button>
+        <div class="tool-divider"></div>
+        <span id="zoom-label" class="zoom-label">100%</span>
+        <div class="tool-divider"></div>
+        <button id="zoom-out" class="tool-btn" title="Alejar" aria-label="Alejar">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/></svg>
+        </button>
+        <div class="tool-divider"></div>
+        <button id="zoom-reset" class="tool-btn" title="Restablecer zoom" aria-label="Restablecer zoom">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 8h-3V5M16 8h3V5M8 16H5v3M16 16h3v3"/></svg>
+        </button>
+      </div>
+
+      <button id="fullscreen-btn" class="floating-square glass-panel" title="Pantalla completa" aria-label="Pantalla completa">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 4H4v4M16 4h4v4M8 20H4v-4M16 20h4v-4"/></svg>
+      </button>
+
+      <button id="sound-btn" class="floating-square sound-control glass-panel" title="Activar o silenciar sonido" aria-label="Activar o silenciar sonido">
+        <svg class="sound-on" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 10v4h4l5 4V6L9 10H5Z"/><path d="M17 9c1.5 1.5 1.5 4.5 0 6M19.5 6.5c3 3 3 8 0 11"/></svg>
+        <svg class="sound-off" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 10v4h4l5 4V6L9 10H5Z"/><path d="m17 10 4 4M21 10l-4 4"/></svg>
+      </button>
+    </aside>
+
+    <div class="keyboard-wrap">
+      <button id="keyboard-help-btn" class="floating-square glass-panel" title="Atajos de teclado" aria-label="Atajos de teclado" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M6 9h1M9 9h1M12 9h1M15 9h1M18 9h.01M6 12h1M9 12h1M12 12h1M15 12h1M18 12h.01M7 15h10"/></svg>
+      </button>
+      <div id="keyboard-help" class="keyboard-popover glass-panel" role="dialog" aria-label="Atajos de teclado">
+        <strong>Atajos de teclado</strong>
+        <span><kbd>←</kbd><kbd>→</kbd> Cambiar página</span>
+        <span><kbd>+</kbd><kbd>−</kbd> Zoom</span>
+        <span><kbd>0</kbd> Restablecer zoom</span>
+        <span><kbd>F</kbd> Pantalla completa</span>
+        <span><kbd>M</kbd> Sonido</span>
+
+          <div class="keyboard-institutional">
+          <div class="keyboard-separator"></div>
+          <div class="keyboard-credit">Desarrollado por <a href="https://github.com/AngelCLA" target="_blank" rel="noopener noreferrer">CLAAngel</a></div>
+          <div class="keyboard-separator keyboard-separator--small"></div>
+          <div class="keyboard-legal">© 2026 <a href="https://ebooks.claangel.site" target="_blank" rel="noopener noreferrer">CLA Ebooks</a> | CLA Tech</div>
+          <div class="keyboard-legal">Los derechos de los PDFs pertenecen a sus autores.</div>
+        </div>
+      </div>
+    </div>
+
+    <div id="loading" class="loading">
+      <div class="loading-panel glass-panel">
+        <div class="loading-book" aria-hidden="true"><i></i><i></i><i></i></div>
+        <strong>Cargando ebook</strong>
+        <span id="loading-text">Preparando las primeras páginas…</span>
+      </div>
+    </div>
+  </div>
+
+  <audio id="turn-sound" preload="auto" src="assets/page-turn.mp3"></audio>
+  <script src="assets/book-config.js"></script>
+  <script src="assets/reader.js"></script>
+</body>
+</html>

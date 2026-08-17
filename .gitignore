@@ -1,0 +1,33 @@
+# Dependencias y frontend generado
+node_modules/
+dist/
+dist-ssr/
+
+# Rust y Tauri: compilaciones, cachés e instaladores
+src-tauri/target/
+src-tauri/gen/
+*.msi
+*-setup.exe
+
+# Sidecar Python generado
+/build/
+/ebook-generator.spec
+src-tauri/binaries/*.exe
+.venv/
+__pycache__/
+*.pyc
+
+# Archivos exportados o temporales
+*.zip
+exports/
+previews/
+/web/
+
+# Editor, sistema y logs
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+Thumbs.db
+*.log
+*.local
